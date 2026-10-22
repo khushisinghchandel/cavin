@@ -1,3 +1,6 @@
+/* ==========================================================
+   Cavin Pharmaceutical - shared stylesheet (used by every page)
+   ========================================================== */
 :root {
   --indigo: #5b5eae;
   --indigo-deep: #3f4190;
@@ -27,15 +30,16 @@ p { margin: 0 0 1em; max-width: 62ch; }
 
 .wrap { width: min(1160px, 92%); margin-inline: auto; }
 .center { text-align: center; }
-.center + .lead, .lead.center { margin-inline: auto; text-align: center; }
 .lead { font-size: 1.2rem; color: var(--muted); margin-bottom: 2.2rem; }
+.lead.center { margin-inline: auto; }
+.more { max-width: none; margin: 2.2rem 0 0; }
 
-/* Top bar */
+/* ---------- Top bar ---------- */
 .topbar { background: var(--indigo); color: #fff; font-size: .9rem; }
 .topbar-in { display: flex; justify-content: space-between; gap: 1rem; padding: .5rem 0; flex-wrap: wrap; }
 .topbar a { color: #fff; text-decoration: none; font-weight: 600; }
 
-/* Header */
+/* ---------- Header / nav ---------- */
 .header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.96); backdrop-filter: blur(8px); border-bottom: 3px solid var(--amber); }
 .header-in { display: flex; align-items: center; justify-content: space-between; padding: .7rem 0; }
 .brand { display: flex; align-items: center; gap: .7rem; text-decoration: none; color: var(--ink); font-family: var(--display); font-size: 1.5rem; font-weight: 700; line-height: 1; }
@@ -46,17 +50,20 @@ p { margin: 0 0 1em; max-width: 62ch; }
 .menu-btn { display: none; background: none; border: 0; padding: .6rem; cursor: pointer; }
 .menu-btn span { display: block; width: 24px; height: 2px; background: var(--ink); margin: 5px 0; }
 
-/* Hero */
-.hero { background: linear-gradient(180deg, var(--paper), #fff); padding: clamp(2.5rem, 7vw, 5.5rem) 0; overflow: hidden; }
-.hero-in { display: grid; grid-template-columns: 1.1fr .9fr; gap: 3rem; align-items: center; }
-.hero-copy p { font-size: 1.2rem; color: var(--muted); }
-.btns { display: flex; gap: .8rem; flex-wrap: wrap; margin: 1.6rem 0; }
+/* ---------- Buttons & links ---------- */
 .btn { display: inline-block; padding: .85rem 1.6rem; border-radius: 999px; font-weight: 600; text-decoration: none; transition: transform .15s, background .2s; }
 .btn:hover { transform: translateY(-2px); }
 .btn.primary { background: var(--indigo); color: #fff; }
 .btn.primary:hover { background: var(--indigo-deep); }
 .btn.ghost { border: 2px solid var(--indigo); color: var(--indigo-deep); }
-.btn.light { background: #fff; color: var(--indigo-deep); margin-top: .5rem; }
+.btn.light { background: #fff; color: var(--indigo-deep); }
+.btns { display: flex; gap: .8rem; flex-wrap: wrap; margin: 1.6rem 0; }
+.text-link { font-weight: 600; text-underline-offset: 4px; }
+
+/* ---------- Hero (home page) ---------- */
+.hero { background: linear-gradient(180deg, var(--paper), #fff); padding: clamp(2.5rem, 7vw, 5.5rem) 0; overflow: hidden; }
+.hero-in { display: grid; grid-template-columns: 1.1fr .9fr; gap: 3rem; align-items: center; }
+.hero-copy p { font-size: 1.2rem; color: var(--muted); }
 .certs { list-style: none; display: flex; gap: .6rem; padding: 0; margin: 0; flex-wrap: wrap; }
 .certs li { border: 1.5px solid var(--lilac); color: var(--indigo-deep); padding: .25rem .8rem; border-radius: 999px; font-size: .9rem; font-weight: 500; background: #fff; }
 .hero-art { position: relative; }
@@ -66,38 +73,44 @@ p { margin: 0 0 1em; max-width: 62ch; }
 .float-card strong { display: block; font-family: var(--display); font-size: 1.1rem; }
 .float-card span { font-size: .92rem; color: var(--muted); line-height: 1.4; display: block; }
 
-/* Band */
+/* ---------- Page header (for inner pages: about, products...) ---------- */
+.page-hero { background: linear-gradient(120deg, var(--lilac), var(--indigo)); color: #fff; padding: clamp(2.5rem, 6vw, 4.5rem) 0; }
+.page-hero h1 { color: #fff; font-size: clamp(2rem, 4.5vw, 3.2rem); margin-bottom: .3em; }
+.page-hero p { color: #eceafb; font-size: 1.15rem; margin: 0; }
+
+/* ---------- Mission band ---------- */
 .band { background: linear-gradient(120deg, var(--lilac), var(--indigo)); color: #fff; padding: clamp(2.5rem, 6vw, 4rem) 0; }
 .band p { font-family: var(--display); font-size: clamp(1.4rem, 3vw, 2.1rem); line-height: 1.35; max-width: 34em; margin: 0 auto; text-align: center; }
 
-/* Sections */
+/* ---------- Sections & layout ---------- */
 .section { padding: clamp(3rem, 7vw, 5.5rem) 0; }
 .section.alt { background: var(--paper); }
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
 .two { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
 
+/* ---------- Value cards ---------- */
 .values { display: grid; gap: 1.2rem; }
 .values article { background: var(--paper); border-radius: var(--radius); padding: 1.6rem; border-left: 5px solid var(--indigo); }
 .values svg, .steps svg { width: 36px; height: 36px; color: var(--indigo); margin-bottom: .6rem; }
 .values p { margin: 0; color: var(--muted); }
 
-/* Process */
-.steps { list-style: none; padding: 0; margin: 2.5rem 0 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; position: relative; }
+/* ---------- Process steps ---------- */
+.steps { list-style: none; padding: 0; margin: 2.5rem 0 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
 .steps li { background: #fff; border-radius: var(--radius); padding: 1.5rem 1.2rem; text-align: center; border: 1px solid #dfdff2; }
 .steps svg { margin-inline: auto; }
 .steps h3 { font-size: 1.15rem; }
 .steps p { font-size: .95rem; color: var(--muted); margin: 0 auto; }
 
-/* Cards */
-.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+/* ---------- Cards ---------- */
 .card { background: var(--paper); border-radius: var(--radius); padding: 1.7rem; border: 1px solid #e3e3f3; }
 .card p { color: var(--muted); font-size: .98rem; margin: 0; }
 .card.accent { background: var(--indigo); border-color: var(--indigo); }
 .card.accent h3, .card.accent p { color: #fff; }
 .card.accent a { display: inline-block; margin-top: 1rem; color: #fff; font-weight: 600; text-underline-offset: 4px; }
 
-/* Products */
-.product { background: #fff; border-radius: var(--radius); overflow: hidden; border: 1px solid #e3e3f3; }
+/* ---------- Products ---------- */
+.product { background: #fff; border-radius: var(--radius); overflow: hidden; border: 1px solid #e3e3f3; padding-bottom: .6rem; }
 .product h3, .product p { padding-inline: 1.6rem; }
 .product h3 { margin-top: 1.3rem; }
 .product p { color: var(--muted); }
@@ -106,13 +119,19 @@ p { margin: 0 0 1em; max-width: 62ch; }
 .ph.acute { background: linear-gradient(135deg, var(--lilac), var(--indigo)); }
 .ph.chronic { background: linear-gradient(135deg, var(--indigo), var(--indigo-deep)); }
 
-/* Vision / opportunities */
+/* ---------- Vision / opportunities panels ---------- */
 .panel { border-radius: var(--radius); padding: clamp(1.8rem, 4vw, 3rem); background: var(--mist); }
 .panel.dark { background: var(--indigo-deep); color: #fff; }
 .panel.dark h2 { color: #fff; }
 .panel.dark p { color: #e2e2f6; }
 
-/* Contact */
+/* ---------- Call-to-action band ---------- */
+.cta-band { background: var(--indigo-deep); color: #fff; padding: clamp(2.5rem, 6vw, 4rem) 0; }
+.cta-in { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+.cta-band h2 { color: #fff; font-size: clamp(1.5rem, 3vw, 2.1rem); margin-bottom: .3em; }
+.cta-band p { color: #d9d9f2; margin: 0; }
+
+/* ---------- Contact ---------- */
 .addr { border-left: 4px solid var(--amber); padding-left: 1rem; margin-bottom: 1.4rem; }
 .addr h3 { margin-bottom: .2rem; font-size: 1.1rem; }
 .addr p { margin: 0; color: var(--muted); }
@@ -125,13 +144,13 @@ p { margin: 0 0 1em; max-width: 62ch; }
 .hours dd { margin: 0; }
 .hours .off dd { color: #ffd89a; }
 
-/* Footer */
+/* ---------- Footer ---------- */
 .footer { background: var(--ink); color: #c9cae6; padding: 1.8rem 0; font-size: .95rem; }
 .footer-in { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
 .footer p { margin: 0; max-width: none; }
 .footer a { color: #fff; margin-left: .8rem; text-underline-offset: 3px; }
 
-/* Responsive */
+/* ---------- Responsive ---------- */
 @media (max-width: 980px) {
   .hero-in, .split, .two { grid-template-columns: 1fr; }
   .grid { grid-template-columns: repeat(2, 1fr); }
@@ -142,6 +161,7 @@ p { margin: 0 0 1em; max-width: 62ch; }
   .menu-btn { display: block; }
   .nav { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: #fff; padding: .8rem 4%; border-bottom: 3px solid var(--amber); }
   .nav.open { display: flex; }
+  .header { position: sticky; }
   .grid, .steps { grid-template-columns: 1fr; }
   .topbar-in { justify-content: center; font-size: .82rem; }
   .float-card { position: static; margin: -2rem auto 0; }

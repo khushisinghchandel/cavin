@@ -33,11 +33,11 @@
         <span></span><span></span><span></span>
       </button>
       <nav id="nav" class="nav">
-        <a href="index.html" class="active">Home</a>
-        <a href="#about">About</a>
-        <a href="#products">Products</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html" class="active" aria-current="page">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
@@ -50,8 +50,8 @@
           <h1>Affordable medicine, made with innovation.</h1>
           <p>Cavin Pharma focuses on the betterment of society, bringing quality medicines to people through economical brands and WHO, GMP and ISO certified manufacturing partners.</p>
           <div class="btns">
-            <a class="btn primary" href="#products">Explore products</a>
-            <a class="btn ghost" href="#contact">Contact us</a>
+            <a class="btn primary" href="products.html">Explore products</a>
+            <a class="btn ghost" href="contact.html">Contact us</a>
           </div>
           <ul class="certs" aria-label="Certifications">
             <li>WHO</li><li>GMP</li><li>ISO</li><li>FDA-compliant</li>
@@ -70,7 +70,6 @@
             </defs>
             <circle cx="260" cy="260" r="230" fill="#ecebf8"/>
             <circle cx="260" cy="260" r="165" fill="none" stroke="#c9c9ea" stroke-width="2" stroke-dasharray="4 10"/>
-            <!-- big capsule -->
             <g class="capsule" transform="rotate(-35 260 260)">
               <rect x="110" y="205" width="300" height="110" rx="55" fill="#fff"/>
               <path d="M260 205h95a55 55 0 0 1 0 110h-95z" fill="url(#g1)"/>
@@ -79,12 +78,10 @@
               <rect x="150" y="222" width="90" height="12" rx="6" fill="#ffffff" opacity=".9"/>
               <rect x="285" y="222" width="90" height="12" rx="6" fill="#fff" opacity=".35"/>
             </g>
-            <!-- tablet -->
             <g transform="translate(95 360)">
               <circle r="46" fill="url(#g2)"/>
               <path d="M-32 0h64" stroke="#fff" stroke-width="4" opacity=".7"/>
             </g>
-            <!-- molecule -->
             <g stroke="#5b5eae" stroke-width="3" stroke-linecap="round">
               <line x1="395" y1="110" x2="440" y2="150"/><line x1="440" y1="150" x2="430" y2="205"/>
               <line x1="440" y1="150" x2="485" y2="135"/>
@@ -93,7 +90,6 @@
             <circle cx="440" cy="150" r="10" fill="#e8a23b"/>
             <circle cx="430" cy="205" r="12" fill="#8789cf"/>
             <circle cx="485" cy="135" r="9" fill="#5b5eae"/>
-            <!-- cross -->
             <g transform="translate(100 120)" fill="#5b5eae">
               <rect x="-8" y="-26" width="16" height="52" rx="5"/><rect x="-26" y="-8" width="52" height="16" rx="5"/>
             </g>
@@ -113,14 +109,14 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section class="section" id="about">
+    <!-- ABOUT TEASER -->
+    <section class="section">
       <div class="wrap split">
         <div>
           <h2>About Cavin Pharma</h2>
-          <p>We maintain high quality standards at every stage of the manufacturing process, with strict adherence to quality medicines at affordable prices through WHO, GMP and ISO certified manufacturing partners.</p>
+          <p>We maintain high quality standards at every stage of the manufacturing process, delivering quality medicines at affordable prices through WHO, GMP and ISO certified manufacturing partners.</p>
           <p>Cavin is a multi-location organization with a rapidly growing presence in the pharmaceutical industry, across both acute and chronic segments.</p>
-          <p>We take on the toughest health challenges, and we aim to do more than treat disease: we aim to make a lasting difference in people’s lives.</p>
+          <a class="text-link" href="about.html">Read more about us</a>
         </div>
         <div class="values">
           <article>
@@ -138,7 +134,7 @@
     </section>
 
     <!-- PROCESS -->
-    <section class="section alt" id="process">
+    <section class="section alt">
       <div class="wrap">
         <h2 class="center">From the lab to the pharmacy</h2>
         <p class="lead center">Our work moves through five connected stages, each held to the same standard.</p>
@@ -152,24 +148,8 @@
       </div>
     </section>
 
-    <!-- RESEARCH -->
-    <section class="section" id="research">
-      <div class="wrap">
-        <h2>Medical research</h2>
-        <p class="lead">Our mission is to discover and deliver innovative medicines that solve serious health issues and help people meet the medical challenges of tomorrow.</p>
-        <div class="grid">
-          <article class="card"><h3>Innovate</h3><p>From ideation to application, we innovate where it matters most, for the people who matter most.</p></article>
-          <article class="card"><h3>Formulate</h3><p>It is not just about getting tricky ingredients into a neat package. It is about creating effective therapeutic solutions people feel good about using.</p></article>
-          <article class="card"><h3>Create</h3><p>Our commitment to innovation doesn’t end in the lab, and neither does our partnership with you.</p></article>
-          <article class="card"><h3>Capabilities</h3><p>We specialize in the development and manufacture of some of the world’s most innovative, patient-convenient packages.</p></article>
-          <article class="card"><h3>Process development</h3><p>From early development, we work with you on a process that scales seamlessly from pre-clinical to certified lab to full commercialization.</p></article>
-          <article class="card accent"><h3>Pipeline</h3><p>Advancing medicines with strong clinical performance in areas of great need, across acute and chronic care.</p><a href="#contact">Find more</a></article>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRODUCTS -->
-    <section class="section alt" id="products">
+    <!-- PRODUCTS TEASER -->
+    <section class="section">
       <div class="wrap">
         <h2 class="center">Products</h2>
         <p class="lead center">Two segments, one standard of quality.</p>
@@ -189,51 +169,18 @@
             <p>Dependable, long-term therapies priced to stay affordable.</p>
           </article>
         </div>
+        <p class="center more"><a class="btn primary" href="products.html">View all products</a></p>
       </div>
     </section>
 
-    <!-- VISION + OPPORTUNITIES -->
-    <section class="section" id="gallery">
-      <div class="wrap two">
-        <div class="panel">
-          <h2>Vision</h2>
-          <p>Achieving excellence in health care business through high standards of quality, productivity and innovation.</p>
-        </div>
-        <div class="panel dark">
-          <h2>Opportunities</h2>
-          <p>Join us in your field of expertise and help make a difference in the pharma industry.</p>
-          <p>We have always worked to attract and retain the best talent, offering career growth and preparing people for future roles. Explore our current openings or send us your resume for future ones.</p>
-          <a class="btn light" href="mailto:info@cavinpharma.com">Send your resume</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section alt" id="contact">
-      <div class="wrap split">
+    <!-- CONTACT STRIP -->
+    <section class="cta-band">
+      <div class="wrap cta-in">
         <div>
-          <h2>Our location</h2>
-          <div class="addr">
-            <h3>Corporate office</h3>
-            <p>D-101, Lodha Park, Lodha Regency, Sandap, Dombivli (E), Mumbai 421203</p>
-          </div>
-          <div class="addr">
-            <h3>Regional office</h3>
-            <p>105, Sahil Siddhi Vinayak, Tower Square, Indore 425001</p>
-          </div>
-          <p><a href="tel:7058623025">7058623025</a></p>
+          <h2>Have a question or want to partner with us?</h2>
+          <p>Our team is available Monday to Friday, 10:00am – 08:00pm.</p>
         </div>
-        <div class="hours">
-          <h2>Opening hours</h2>
-          <dl>
-            <div><dt>Monday</dt><dd>10:00am – 08:00pm</dd></div>
-            <div><dt>Tuesday</dt><dd>10:00am – 08:00pm</dd></div>
-            <div><dt>Wednesday</dt><dd>10:00am – 08:00pm</dd></div>
-            <div><dt>Thursday</dt><dd>10:00am – 08:00pm</dd></div>
-            <div><dt>Friday</dt><dd>10:00am – 08:00pm</dd></div>
-            <div class="off"><dt>Saturday – Sunday</dt><dd>Closed</dd></div>
-          </dl>
-        </div>
+        <a class="btn light" href="contact.html">Contact us</a>
       </div>
     </section>
   </main>
@@ -255,9 +202,6 @@
     btn.addEventListener('click', () => {
       const open = nav.classList.toggle('open');
       btn.setAttribute('aria-expanded', open);
-    });
-    nav.addEventListener('click', e => {
-      if (e.target.tagName === 'A') { nav.classList.remove('open'); btn.setAttribute('aria-expanded', false); }
     });
   </script>
 </body>

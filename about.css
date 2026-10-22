@@ -1,0 +1,46 @@
+/* ==========================================================
+   About page styles - loaded after style.css
+   ========================================================== */
+
+/* Who we are: quote block */
+.about-art { display: grid; gap: 1.5rem; align-content: start; }
+.quote {
+  margin: 0;
+  padding: clamp(1.6rem, 4vw, 2.6rem);
+  background: var(--mist);
+  border-radius: var(--radius);
+  border-left: 6px solid var(--amber);
+  font-family: var(--display);
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+  line-height: 1.35;
+  color: var(--indigo-deep);
+}
+
+/* Mission & vision */
+.mv { background: #fff; border: 1px solid #e3e3f3; }
+.mv svg { width: 40px; height: 40px; color: var(--indigo); margin-bottom: 1rem; }
+.mv h2 { font-size: 1.8rem; }
+.mv p { margin: 0; color: var(--muted); }
+
+/* How we work */
+.pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
+.pillar { display: flex; gap: 1.2rem; align-items: flex-start; background: var(--paper); border-radius: var(--radius); padding: 1.8rem; border-left: 5px solid var(--indigo); }
+.pillar svg { flex: none; width: 40px; height: 40px; color: var(--indigo); }
+.pillar h3 { margin-bottom: .3em; }
+.pillar p { margin: 0; color: var(--muted); }
+
+/* Medical research cards sit on a light background, so make them white */
+.research .card { background: #fff; }
+.research .card.accent { background: var(--indigo); }
+
+/* Careers */
+.careers { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.careers .lead { margin-bottom: 0; }
+.careers .btn { margin-top: .4rem; }
+
+@media (max-width: 980px) {
+  .pillars, .careers { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .pillar { flex-direction: column; }
+}

@@ -1,0 +1,87 @@
+
+/* ==========================================================
+   Gallery page styles - loaded after style.css
+   ========================================================== */
+
+/* Filter buttons */
+.filters { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 2rem; }
+.chip-btn {
+  font: inherit; font-weight: 500; cursor: pointer;
+  padding: .6rem 1.3rem; border-radius: 999px;
+  border: 2px solid var(--lilac); background: #fff; color: var(--indigo-deep);
+  transition: background .2s, color .2s, border-color .2s;
+}
+.chip-btn:hover { background: var(--mist); }
+.chip-btn.is-on { background: var(--indigo); border-color: var(--indigo); color: #fff; }
+
+/* Grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 210px;
+  grid-auto-flow: dense;
+  gap: 1rem;
+}
+.g-item {
+  position: relative; display: block; padding: 0; border: 0; cursor: zoom-in;
+  border-radius: var(--radius); overflow: hidden; background: var(--mist);
+  font: inherit; text-align: left;
+}
+.g-item[hidden] { display: none; }
+.g-item.wide { grid-column: span 2; }
+.g-item.tall { grid-row: span 2; }
+
+.g-media { position: absolute; inset: 0; display: grid; place-items: center; transition: transform .4s ease; }
+.g-media svg { width: 72px; height: 72px; color: rgba(255,255,255,.92); }
+.g-media img { width: 100%; height: 100%; object-fit: cover; }
+.g-item:hover .g-media { transform: scale(1.05); }
+
+/* Caption sits on a dark fade so it is readable on any photo */
+.g-cap {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 2.2rem 1.1rem .9rem; color: #fff; font-weight: 500;
+  background: linear-gradient(to top, rgba(31,32,64,.8), rgba(31,32,64,0));
+}
+
+/* Placeholder colours (remove once you add real photos) */
+.m1 { background: linear-gradient(135deg, #8789cf, #3f4190); }
+.m2 { background: linear-gradient(135deg, #5b5eae, #3f4190); }
+.m3 { background: linear-gradient(135deg, #f3b95a, #d8861f); }
+.m4 { background: linear-gradient(135deg, #8789cf, #5b5eae); }
+.m5 { background: linear-gradient(135deg, #3f4190, #5b5eae); }
+.m6 { background: linear-gradient(135deg, #e8a23b, #5b5eae); }
+.m7 { background: linear-gradient(135deg, #5b5eae, #8789cf); }
+.m8 { background: linear-gradient(135deg, #d8861f, #3f4190); }
+.m9 { background: linear-gradient(135deg, #8789cf, #e8a23b); }
+
+/* Lightbox */
+.lightbox {
+  border: 0; padding: 0; background: transparent; max-width: 100vw; max-height: 100vh;
+  width: 100%; height: 100%; margin: 0; overflow: hidden;
+}
+.lightbox[open] { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: .5rem; padding: 1rem; }
+.lightbox::backdrop { background: rgba(20,21,48,.88); }
+.lb-fig { margin: 0; justify-self: center; width: min(100%, 820px); }
+.lb-media { aspect-ratio: 4 / 3; border-radius: var(--radius); overflow: hidden; display: grid; place-items: center; background: var(--indigo); }
+.lb-media svg { width: 140px; height: 140px; color: rgba(255,255,255,.92); }
+.lb-media img { width: 100%; height: 100%; object-fit: contain; background: #111; }
+.lb-fig figcaption { color: #fff; text-align: center; margin-top: .9rem; font-family: var(--display); font-size: 1.25rem; }
+.lb-nav, .lb-close {
+  background: rgba(255,255,255,.15); color: #fff; border: 0; cursor: pointer;
+  width: 48px; height: 48px; border-radius: 50%; font-size: 2rem; line-height: 1;
+  transition: background .2s;
+}
+.lb-nav:hover, .lb-close:hover { background: rgba(255,255,255,.3); }
+.lb-close { position: absolute; top: 1rem; right: 1rem; z-index: 2; }
+
+/* Responsive */
+@media (max-width: 980px) { .gallery { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 680px) {
+  .gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 170px; gap: .7rem; }
+  .g-item.wide { grid-column: span 2; }
+  .lightbox[open] { grid-template-columns: 1fr; grid-template-rows: 1fr auto; align-content: center; }
+  .lb-nav { position: absolute; bottom: 1.2rem; }
+  .lb-nav.prev { left: 1rem; }
+  .lb-nav.next { right: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) { .g-media, .chip-btn { transition: none; } .g-item:hover .g-media { transform: none; } }
