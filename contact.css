@@ -1,0 +1,39 @@
+/* ==========================================================
+   Contact page styles - loaded after style.css
+   ========================================================== */
+
+.contact-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(2rem, 4vw, 3.5rem); align-items: start; }
+
+/* Form */
+.form-card { background: var(--paper); border: 1px solid #e3e3f3; border-radius: var(--radius); padding: clamp(1.6rem, 4vw, 2.6rem); }
+.form-card h2 { font-size: 1.9rem; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.field { margin-bottom: 1.1rem; }
+.field label { display: block; font-weight: 600; font-size: .92rem; margin-bottom: .35rem; }
+.field input, .field select, .field textarea {
+  width: 100%; font: inherit; color: var(--ink);
+  padding: .75rem 1rem; background: #fff;
+  border: 1.5px solid #cfd0ea; border-radius: 12px;
+  transition: border-color .2s, box-shadow .2s;
+}
+.field textarea { resize: vertical; min-height: 130px; }
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none; border-color: var(--indigo); box-shadow: 0 0 0 4px rgba(91,94,174,.18);
+}
+.form-card .btn { border: 0; cursor: pointer; font: inherit; font-weight: 600; }
+.status { margin: 1rem 0 0; font-weight: 500; min-height: 1.5em; }
+.status.ok { color: #1f6b3a; }
+.status.error { color: #b3261e; }
+
+/* Details */
+.info { display: grid; gap: 1rem; }
+.office { display: flex; gap: 1rem; align-items: flex-start; background: #fff; border: 1px solid #e3e3f3; border-left: 5px solid var(--amber); border-radius: var(--radius); padding: 1.3rem 1.4rem; }
+.office svg { flex: none; width: 34px; height: 34px; color: var(--indigo); margin-top: .15rem; }
+.office h3 { font-size: 1.1rem; margin-bottom: .25em; }
+.office p { margin: 0 0 .4rem; color: var(--muted); font-size: .98rem; }
+.big-link { font-weight: 600; font-size: 1.15rem; color: var(--indigo-deep); text-decoration: none; word-break: break-word; }
+.big-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+@media (max-width: 980px) { .contact-grid { grid-template-columns: 1fr; } }
+@media (max-width: 520px) { .row { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .field input, .field select, .field textarea { transition: none; } }
